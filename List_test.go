@@ -56,6 +56,52 @@ func TestIntList(t *testing.T) {
 	assert.Error(t, e)
 }
 
+func TestInt8List(t *testing.T) {
+	l := NewInt8List()
+
+	// TODO: More meaningful test
+	var v int8
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestInt16List(t *testing.T) {
+	l := NewInt16List()
+
+	// TODO: More meaningful test
+	var v int16
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
 func TestInt32List(t *testing.T) {
 	l := NewInt32List()
 
@@ -107,6 +153,213 @@ func TestBoolList(t *testing.T) {
 
 	// TODO: More meaningful test
 	var v bool
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestUintList(t *testing.T) {
+	l := NewUintList()
+
+	// TODO: More meaningful test
+	var v uint
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestUint8List(t *testing.T) {
+	l := NewUint8List()
+
+	// TODO: More meaningful test
+	var v uint8
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestUint16List(t *testing.T) {
+	l := NewUint16List()
+
+	// TODO: More meaningful test
+	var v uint16
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestUint32List(t *testing.T) {
+	l := NewUint32List()
+
+	// TODO: More meaningful test
+	var v uint32
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestUint64List(t *testing.T) {
+	l := NewUint64List()
+
+	// TODO: More meaningful test
+	var v uint64
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestFloat32List(t *testing.T) {
+	l := NewFloat32List()
+
+	// TODO: More meaningful test
+	var v float32
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestFloat64List(t *testing.T) {
+	l := NewFloat64List()
+
+	// TODO: More meaningful test
+	var v float64
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestComplex64List(t *testing.T) {
+	l := NewComplex64List()
+
+	// TODO: More meaningful test
+	var v complex64
+
+	l.Append(v)
+
+	x, e := l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Set(0, v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.NoError(t, e)
+
+	l.Remove(v)
+	x, e = l.Get(0)
+	assert.Equal(t, v, x)
+	assert.Error(t, e)
+}
+
+func TestComplex128List(t *testing.T) {
+	l := NewComplex128List()
+
+	// TODO: More meaningful test
+	var v complex128
 
 	l.Append(v)
 
