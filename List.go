@@ -4,11 +4,7 @@
 
 package main
 
-import (
-	"testing"
-
-	"gopkg.in/go-playground/assert.v1"
-)
+import "errors"
 
 type StringList struct {
 	s []string
@@ -31,30 +27,24 @@ func (c *StringList) Remove(val string) {
 	}
 }
 
-func (c *StringList) Get(i int) (v string) {
+func (c *StringList) Get(i int) (val string, err error) {
 	if i < len(c.s) {
-		v = c.s[i]
+		val = c.s[i]
+	} else {
+		err = errors.New("index out of bounds")
 	}
 
 	return
 }
 
-func (c *StringList) Set(i int, v string) {
-	c.s[i] = v
-}
+func (c *StringList) Set(idx int, val string) (err error) {
+	if idx < len(c.s) {
+		c.s[idx] = val
+	} else {
+		err = errors.New("index out of bounds")
+	}
 
-func TestStringList(t *testing.T) {
-	l := NewStringList()
-	var v string
-
-	l.Add(v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Set(0, v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Remove(v)
-	assert.Equal(t, "", l.Get(0))
+	return
 }
 
 type IntList struct {
@@ -78,30 +68,24 @@ func (c *IntList) Remove(val int) {
 	}
 }
 
-func (c *IntList) Get(i int) (v int) {
+func (c *IntList) Get(i int) (val int, err error) {
 	if i < len(c.s) {
-		v = c.s[i]
+		val = c.s[i]
+	} else {
+		err = errors.New("index out of bounds")
 	}
 
 	return
 }
 
-func (c *IntList) Set(i int, v int) {
-	c.s[i] = v
-}
+func (c *IntList) Set(idx int, val int) (err error) {
+	if idx < len(c.s) {
+		c.s[idx] = val
+	} else {
+		err = errors.New("index out of bounds")
+	}
 
-func TestIntList(t *testing.T) {
-	l := NewIntList()
-	var v int
-
-	l.Add(v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Set(0, v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Remove(v)
-	assert.Equal(t, "", l.Get(0))
+	return
 }
 
 type Int32List struct {
@@ -125,30 +109,24 @@ func (c *Int32List) Remove(val int32) {
 	}
 }
 
-func (c *Int32List) Get(i int) (v int32) {
+func (c *Int32List) Get(i int) (val int32, err error) {
 	if i < len(c.s) {
-		v = c.s[i]
+		val = c.s[i]
+	} else {
+		err = errors.New("index out of bounds")
 	}
 
 	return
 }
 
-func (c *Int32List) Set(i int, v int32) {
-	c.s[i] = v
-}
+func (c *Int32List) Set(idx int, val int32) (err error) {
+	if idx < len(c.s) {
+		c.s[idx] = val
+	} else {
+		err = errors.New("index out of bounds")
+	}
 
-func TestInt32List(t *testing.T) {
-	l := NewInt32List()
-	var v int32
-
-	l.Add(v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Set(0, v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Remove(v)
-	assert.Equal(t, "", l.Get(0))
+	return
 }
 
 type Int64List struct {
@@ -172,30 +150,24 @@ func (c *Int64List) Remove(val int64) {
 	}
 }
 
-func (c *Int64List) Get(i int) (v int64) {
+func (c *Int64List) Get(i int) (val int64, err error) {
 	if i < len(c.s) {
-		v = c.s[i]
+		val = c.s[i]
+	} else {
+		err = errors.New("index out of bounds")
 	}
 
 	return
 }
 
-func (c *Int64List) Set(i int, v int64) {
-	c.s[i] = v
-}
+func (c *Int64List) Set(idx int, val int64) (err error) {
+	if idx < len(c.s) {
+		c.s[idx] = val
+	} else {
+		err = errors.New("index out of bounds")
+	}
 
-func TestInt64List(t *testing.T) {
-	l := NewInt64List()
-	var v int64
-
-	l.Add(v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Set(0, v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Remove(v)
-	assert.Equal(t, "", l.Get(0))
+	return
 }
 
 type BoolList struct {
@@ -219,28 +191,22 @@ func (c *BoolList) Remove(val bool) {
 	}
 }
 
-func (c *BoolList) Get(i int) (v bool) {
+func (c *BoolList) Get(i int) (val bool, err error) {
 	if i < len(c.s) {
-		v = c.s[i]
+		val = c.s[i]
+	} else {
+		err = errors.New("index out of bounds")
 	}
 
 	return
 }
 
-func (c *BoolList) Set(i int, v bool) {
-	c.s[i] = v
-}
+func (c *BoolList) Set(idx int, val bool) (err error) {
+	if idx < len(c.s) {
+		c.s[idx] = val
+	} else {
+		err = errors.New("index out of bounds")
+	}
 
-func TestBoolList(t *testing.T) {
-	l := NewBoolList()
-	var v bool
-
-	l.Add(v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Set(0, v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Remove(v)
-	assert.Equal(t, "", l.Get(0))
+	return
 }

@@ -1,10 +1,9 @@
 package main
 
 import (
-	"testing"
+	"errors"
 
 	"github.com/cheekybits/genny/generic"
-	"gopkg.in/go-playground/assert.v1"
 )
 
 type Item generic.Type
@@ -30,30 +29,22 @@ func (c *ItemList) Remove(val Item) {
 	}
 }
 
-func (c *ItemList) Get(i int) (v Item) {
+func (c *ItemList) Get(i int) (val Item, err error) {
 	if i < len(c.s) {
-		v = c.s[i]
+		val = c.s[i]
+	} else {
+		err = errors.New("index out of bounds")
 	}
 
 	return
 }
 
-func (c *ItemList) Set(i int, v Item) {
-	c.s[i] = v
-}
+func (c *ItemList) Set(idx int, val Item) (err error) {
+	if idx < len(c.s) {
+		c.s[idx] = val
+	} else {
+		err = errors.New("index out of bounds")
+	}
 
-func TestItemList(t *testing.T) {
-	l := NewItemList()
-
-	// TODO: More meaningful test
-	var v Item
-
-	l.Add(v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Set(0, v)
-	assert.Equal(t, v, l.Get(0))
-
-	l.Remove(v)
-	assert.Equal(t, "", l.Get(0))
+	return
 }
