@@ -12,7 +12,7 @@ func TestItemList(t *testing.T) {
 	// TODO: More meaningful test
 	var v Item
 
-	l.Add(v)
+	l.Append(v)
 
 	x, e := l.Get(0)
 	assert.Equal(t, v, x)

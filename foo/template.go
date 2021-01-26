@@ -16,8 +16,12 @@ func NewItemList() *ItemList {
 	return &ItemList{s: []Item{}}
 }
 
-func (c *ItemList) Add(val Item) {
+func (c *ItemList) Append(val Item) {
 	c.s = append(c.s, val)
+}
+
+func (c *ItemList) Prepend(val Item) {
+	c.s = append([]Item{val}, c.s...)
 }
 
 func (c *ItemList) Remove(val Item) {

@@ -16,7 +16,7 @@ func TestStringList(t *testing.T) {
 	// TODO: More meaningful test
 	var v string
 
-	l.Add(v)
+	l.Append(v)
 
 	x, e := l.Get(0)
 	assert.Equal(t, v, x)
@@ -39,7 +39,7 @@ func TestIntList(t *testing.T) {
 	// TODO: More meaningful test
 	var v int
 
-	l.Add(v)
+	l.Append(v)
 
 	x, e := l.Get(0)
 	assert.Equal(t, v, x)
@@ -62,7 +62,7 @@ func TestInt32List(t *testing.T) {
 	// TODO: More meaningful test
 	var v int32
 
-	l.Add(v)
+	l.Append(v)
 
 	x, e := l.Get(0)
 	assert.Equal(t, v, x)
@@ -85,7 +85,7 @@ func TestInt64List(t *testing.T) {
 	// TODO: More meaningful test
 	var v int64
 
-	l.Add(v)
+	l.Append(v)
 
 	x, e := l.Get(0)
 	assert.Equal(t, v, x)
@@ -108,7 +108,7 @@ func TestBoolList(t *testing.T) {
 	// TODO: More meaningful test
 	var v bool
 
-	l.Add(v)
+	l.Append(v)
 
 	x, e := l.Get(0)
 	assert.Equal(t, v, x)

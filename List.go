@@ -14,8 +14,12 @@ func NewStringList() *StringList {
 	return &StringList{s: []string{}}
 }
 
-func (c *StringList) Add(val string) {
+func (c *StringList) Append(val string) {
 	c.s = append(c.s, val)
+}
+
+func (c *StringList) Prepend(val string) {
+	c.s = append([]string{val}, c.s...)
 }
 
 func (c *StringList) Remove(val string) {
@@ -55,8 +59,12 @@ func NewIntList() *IntList {
 	return &IntList{s: []int{}}
 }
 
-func (c *IntList) Add(val int) {
+func (c *IntList) Append(val int) {
 	c.s = append(c.s, val)
+}
+
+func (c *IntList) Prepend(val int) {
+	c.s = append([]int{val}, c.s...)
 }
 
 func (c *IntList) Remove(val int) {
@@ -96,8 +104,12 @@ func NewInt32List() *Int32List {
 	return &Int32List{s: []int32{}}
 }
 
-func (c *Int32List) Add(val int32) {
+func (c *Int32List) Append(val int32) {
 	c.s = append(c.s, val)
+}
+
+func (c *Int32List) Prepend(val int32) {
+	c.s = append([]int32{val}, c.s...)
 }
 
 func (c *Int32List) Remove(val int32) {
@@ -137,8 +149,12 @@ func NewInt64List() *Int64List {
 	return &Int64List{s: []int64{}}
 }
 
-func (c *Int64List) Add(val int64) {
+func (c *Int64List) Append(val int64) {
 	c.s = append(c.s, val)
+}
+
+func (c *Int64List) Prepend(val int64) {
+	c.s = append([]int64{val}, c.s...)
 }
 
 func (c *Int64List) Remove(val int64) {
@@ -178,8 +194,12 @@ func NewBoolList() *BoolList {
 	return &BoolList{s: []bool{}}
 }
 
-func (c *BoolList) Add(val bool) {
+func (c *BoolList) Append(val bool) {
 	c.s = append(c.s, val)
+}
+
+func (c *BoolList) Prepend(val bool) {
+	c.s = append([]bool{val}, c.s...)
 }
 
 func (c *BoolList) Remove(val bool) {
