@@ -1,6 +1,6 @@
 # Static Generics Example
 
-This is an oversimplified example of using Genny to gain the power of generics in Golang through code generation.
+This is an oversimplified example of using [cheekybits/genny](https://github.com/cheekybits/genny) to gain the power of generics in Golang through code generation.
 
 ## Usage
 
